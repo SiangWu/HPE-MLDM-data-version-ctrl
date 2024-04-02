@@ -1,0 +1,12 @@
+pipeline:
+  name: preprocess
+input:
+  pfs:
+    repo: raw
+    glob: "/*"
+transform:
+  image: yusiangwu/mldm-talib:1.0
+  cmd:
+    - python
+    - /work/preprocess.py
+autoscaling: true
